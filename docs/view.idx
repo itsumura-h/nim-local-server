@@ -1,0 +1,1 @@
+displayView	view.html#displayView,string,seq[string]	view: displayView(path: string; files: seq[string]): string	

@@ -1,0 +1,1 @@
+getFiles	file.html#getFiles,string	file: getFiles(path: string): seq[string]	
