@@ -104,7 +104,7 @@ waitFor main()
 ```
 ---
 ```sh
-nim c -r src/localserver/main.nim
+nim c -r src/localserver/server.nim
 ```
 
 http://localhost:8080でサーバーが立ち上がる
@@ -113,13 +113,13 @@ http://localhost:8080でサーバーが立ち上がる
 
 ---
 # CLIアプリを作る
-
+https://github.com/c-blake/cligen
 
 ---
 
 cligenをインストール
 ```sh
-nimble install cligen
+nimble install cligen -y
 ```
 
 nimbleファイルに依存関係を追記
@@ -157,7 +157,7 @@ Options:
 ---
 
 ```nim
-proc localserver(port=8080) = # <<<<< 引数portを追加 >>>>>
+proc localserver(port=8080) = # 引数portを追加 デフォルト値8080
   discard
 
 when isMainModule:
@@ -210,7 +210,7 @@ when isMainModule:
 src/localserver/server.nim
 
 ```nim
-proc main*(port:int) {.async.} = # <<<<< 引数 port:int を追加、*を付けてpublicにする >>>>>
+proc main*(port:int) {.async.} = # 引数 port:int を追加、*を付けてpublicにする
   var server = newAsyncHttpServer()
   proc cb(req: Request) {.async.} =
     echo (req.reqMethod, req.url, req.headers)
