@@ -2,8 +2,8 @@ https://speakerdeck.com/dumblepy/nimdejing-de-huairusabawozuo-ru-2b58aad5-2003-4
 
 ## 環境構築
 ### Windowsの人
-https://github.com/dom96/choosenim/releases/download/v0.8.4/choosenim-0.8.4_windows_amd64.exe
-ここからWindows用のインストーラーをダウンロード
+https://github.com/dom96/choosenim/releases/download/v0.8.4/choosenim-0.8.4_windows_amd64.exe  
+ここからWindows用のインストーラーをダウンロード  
 ダウンロードしたexeをWindows Power Shellやコマンドプロンプトから実行する
 ```
 dir
@@ -43,5 +43,5 @@ Dockerを使いましょう
 
 ```sh
 docker build ./docker/app -t localserver
-docker run -it  --rm -v `pwd`:/application -w /application localserver bash
+docker run -it --rm -v `pwd`:/application -w /application localserver bash
 ```
